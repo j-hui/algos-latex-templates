@@ -44,7 +44,10 @@ Writing LaTeX
 -------------
 
 The [base template][base-tex] for this repo also contains some handy LaTeX
-examples that you might find useful for doing algorithms assignments. If you
-have any other useful examples, issue a PR!
+examples that you might find useful for doing algorithms assignments. Compile
+the `.tex` document to see what some of the commands end up looking like in the
+resulting PDF.
+
+If you have any other useful examples you'd like to suggest, issue a PR!
 
 [base-tex]: base-tutorial/base-tutorial.tex
