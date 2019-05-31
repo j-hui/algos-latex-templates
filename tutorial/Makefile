@@ -1,7 +1,7 @@
 TEX = pdflatex --interaction=nonstopmode
 BIBTEX = bibtex
 
-TARGET ?= base-tutorial
+TARGET ?= tutorial
 
 PHONY += default
 default: $(TARGET).pdf
