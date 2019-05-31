@@ -26,6 +26,10 @@
 }
 %%%% END pseudocode packages %%%%
 
+%%%% BEGIN other packages %%%%
+\usepackage{hyperref}
+%%%% END other packages %%%%
+
 % This defines a new command which you can use to start a new problem item
 % when under the enumerate environment, e.g.:
 %
@@ -39,6 +43,8 @@
   \medskip
 }
 
+\newcommand{\BACKSLASH}{\char`\\ }
+
 
 \begin{document}
 
@@ -46,9 +52,9 @@
 {\bf CSOR W4231.001---Summer 2019}
 \end{flushright}
 \begin{flushleft}
-  Name: \\
-  UNI: \\
-  Session: {\bf R}(regular) / {\bf V}(CVN) \\ % keep the relevant choice
+  Name: Example Man\\
+  UNI: eg2019\\
+  Session: {\bf X} (example) \\ % keep the relevant choice
   Collaborators: \\ % list names and UNIs of all collaborators
 \end{flushleft}
 
@@ -59,14 +65,224 @@
 
 \problemitem{1}
 
+{\large \textbf{Writing text}}
+
+To write plain text, simply write it as is.
+
+If you leave at least blank line, you will start a new paragraph.
+But if you start immediately on the next line, the text will be included in the
+same paragraph.
+
+To \textbf{write in bold}, use the \texttt{\BACKSLASH textbf} command. To
+\textit{write in} \emph{italics}, use the \texttt{\BACKSLASH textit} command or the
+\texttt{\BACKSLASH emph} command. To write in \texttt{teletype (fixed width)
+text}, use the \texttt{\BACKSLASH texttt} command.
+
 \problemitem{2}
+
+{\large \textbf{Lists}}
+
+To write bulleted lists, write each \texttt{\BACKSLASH item} under the
+\texttt{itemize} environment:
+
+\begin{itemize}
+  \item Like
+  \item This.
+
+    You can still write separate paragraphs under the same bullet.
+  \item
+
+    Though as usual, items aren't
+particularly sensitive
+    to whitespace.
+
+
+\end{itemize}
+
+To write numbered lists, write each \texttt{\BACKSLASH item} under the
+\texttt{enumerate} environment:
+\begin{enumerate}
+  \item Like
+  \item So.
+  \item These items are indexed with (a), (b), etc. because the problem numbers
+    are indexed with the arabic numerals, 1., 2., etc.
+\end{enumerate}
+
+To write lists with descriptions, write each \texttt{\BACKSLASH item} under the
+\texttt{description} environment, with the description in [square brackets]:
+\begin{description}
+  \item[Foo] Like
+  \item[Bar] This.
+  \item[Baz]
+    You can also write descriptions in square brackets in an
+    \texttt{enumerate} list to replace the numeric/alphabetical indices, but the
+    description won't be in bold.
+\end{description}
 
 \problemitem{3}
 
+{\large \textbf{Writing math}}
+
+To write math text inline, use the dollar sign (\texttt{\$}).  When in math
+mode, writing appears $like this$, with spaces removed.  You will need to
+manually $escape\ spaces$ using a backslash followed by a space. Inline math is
+great for referencing variables like $x$ and $\sigma$ and $L_i$ in prose
+writing.
+
+To write displayed equations on their own line, write them enclosed by
+\texttt{\BACKSLASH[} and \texttt{\BACKSLASH]}, e.g.:
+\[
+  E = mc^2
+\]
+
+Here are some handy math symbols:
+\begin{description}
+  \item[Superscript]
+    \[
+      a^b x^{2n}
+    \]
+  \item[Subscript]
+    \[
+      a_b x_{ij}
+    \]
+  \item[Logarithms]
+    \[
+      \log n
+    \]
+  \item[Infinity]
+    \[
+      \infty
+    \]
+  \item[Relational operators]
+    \[
+      = \neq < \leq > \geq
+    \]
+  \item[Set operators]
+    \[
+      \in \notin \{ \} \emptyset \subset \subseteq \cup \cap
+    \]
+  \item[Logical operators]
+    \[
+      \wedge \vee \rightarrow \neg
+    \]
+  \item[Logical metalanguage]
+    \[
+      \Rightarrow \Leftrightarrow \equiv \doteq
+    \]
+  \item[Sets]
+    \[
+      \mathbb{N} \subset \mathbb{Z} \subset \mathbb{R}
+    \]
+  \item[Greek]
+    \[
+      \delta \alpha \beta \omega \Omega \theta \Theta \pi \Gamma
+    \]
+  \item[Fractions (vertical)]
+    \[
+      \frac{a}{b}
+    \]
+  \item[Min and max]
+    \[
+      \min_{v \in V} x_v + \max_{u \in U} x_u
+    \]
+  \item[Arbitrary text]
+    \[
+      x + \text{lorem ipsum}
+    \]
+  \item[Sums]
+    \[
+      \sum_{i = 0}^{n} \sum_{j = 0}^{n} x_{ij}
+    \]
+  \item[Big parens]
+    \[
+      s = \left( \sum_{i = 0}^{\infty} x/i \right)
+    \]
+  \item[Cases]
+    (Use \texttt{\&} to align columns, and use \texttt{\BACKSLASH \BACKSLASH} to
+    start new lines.)
+    \[
+      f(x) = \begin{cases}
+        1                     & \text{if } x \leq 1\\
+        f(x - 1) + f(x - 2)   & \text{otherwise}
+      \end{cases}
+    \]
+  \item[Aligned, multi-line equations]
+    (Use \texttt{\&} to align columns, and use \texttt{\BACKSLASH \BACKSLASH} to
+    start new lines.)
+    \[
+      \begin{aligned}
+        f = & x_i + y_i + 2z_i \\
+            & 5u + 8
+      \end{aligned}
+    \]
+\end{description}
+
+\newpage
+
 \problemitem{4}
+
+{\large \textbf{Writing pseudocode}}
+
+There are two ways to write pseudocode: using \texttt{algorithmic}, or using
+\texttt{lstlisting}.
+
+\medskip
+\textbf{Using \texttt{algorithmic}}
+
+Psuedocode written using the \texttt{algorithmic} environment will appear more
+like the code you see in your lecture slides and textbook, e.g.:
+
+\begin{algorithmic}
+  \Function{Fib}{$n$}
+    \If{$n \leq 1$}
+      \State \textbf{return} $1$
+    \Else
+      \State \textbf{return} \textsc{Fib}($n - 1$) $+$ \textsc{Fib}($n - 2$)
+    \EndIf
+  \EndFunction
+\end{algorithmic}
+
+For more examples and details, see
+\url{http://tug.ctan.org/macros/latex/contrib/algorithmicx/algorithmicx.pdf}.
+
+\medskip
+\textbf{Using \texttt{lstlisting}}
+
+If you prefer to write your pseudocode in plaintext, you may use the
+\texttt{lstlisting} environment, e.g.:
+
+\begin{lstlisting}
+  def fib(n):
+    if n <= 1:
+      return 1
+    else:
+      return fib(n - 1) + fib(n - 2)
+\end{lstlisting}
+
 
 \problemitem{5}
 
-\end{enumerate}
+{\large \textbf{Tables}}
 
+You shouldn't need to use this too often, but here's a simple template to get
+you started. The alignment rules are the same as \texttt{cases} and
+\texttt{aligned}: inside the \texttt{tabular} environment, \texttt{\&} is used
+to align columns, and \texttt{\BACKSLASH \BACKSLASH} is used to start new rows.
+
+\begin{table}[tbh]
+  \centering
+  \renewcommand\arraystretch{1.5}
+  \begin{tabular}{|c|c|c|c|c|}\hline
+    1 & 2 & 3 & 4 & 5\\ \hline % nice and aligned
+  1   & 2 &  3 3 3 3 3 3 3 3 3 3     &4&5 \\ \hline % or not
+  1
+      & 2 &3
+& 4 4 4 4 4 4 4 4 & 5
+\\
+\hline % one row described in many lines
+
+  \end{tabular}
+\end{table}
+
+\end{enumerate}
 \end{document}

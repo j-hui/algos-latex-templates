@@ -37,3 +37,14 @@ remote, and push your work there.
 To compile the `.tex` document, simply navigate to the appropriate working
 directory (e.g. `hw1/`), and run `make`. This will generate a PDF from your
 `.tex` file (e.g. `hw1-submit.pdf`).
+
+--------
+
+Writing LaTeX
+-------------
+
+The [base template][base-tex] for this repo also contains some handy LaTeX
+examples that you might find useful for doing algorithms assignments. If you
+have any other useful examples, issue a PR!
+
+[base-tex]: base-tutorial/base-tutorial.tex
