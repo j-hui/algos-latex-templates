@@ -1,0 +1,104 @@
+%%%% BEGIN document formatting %%%%
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\topmargin}{-0.7in}
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0.0in}
+\setlength{\textheight}{10.0in}
+\setlength{\parindent}{0in}
+\pagestyle{empty}
+%%%% END document formatting %%%%
+
+%%%% BEGIN math packages %%%%
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+%%%% END math packages %%%%
+
+%%%% BEGIN pseudocode packages %%%%
+\usepackage{algpseudocode,algorithm}
+\usepackage{listings}
+\lstset{
+  columns=fixed,
+  basicstyle=\ttfamily, % fixed-width font
+}
+%%%% END pseudocode packages %%%%
+
+%%%% BEGIN other packages %%%%
+\usepackage{hyperref}
+%%%% END other packages %%%%
+
+% This defines a new command which you can use to start a new problem item
+% when under the enumerate environment, e.g.:
+%
+%   \problemitem{2}
+%
+%     Answer to problem 2...
+%
+\newcommand{\problemitem}[1]{
+  \bigskip
+  \item {\bf Solution to problem #1}
+  \medskip
+}
+
+
+\begin{document}
+
+\begin{flushright}
+{\bf CSOR W4231.001---Summer 2019}
+\end{flushright}
+\begin{flushleft}
+  Name: \\
+  UNI: \\
+  Session: {\bf R} (regular) / {\bf V} (CVN) \\ % keep the relevant choice
+  Collaborators: \\ % list names and UNIs of all collaborators
+\end{flushleft}
+
+\bigskip
+\centerline{\bf Homework 2}
+
+\begin{enumerate}
+
+\problemitem{1}
+
+\problemitem{2}
+\begin{enumerate}
+  \item[(a)]
+
+  \item[(b)]
+
+  \item[(c)]
+
+\end{enumerate}
+
+\problemitem{3}
+\begin{enumerate}
+  \item[(a)]
+
+  \item[(b)]
+    \begin{enumerate}
+      \item[i.]
+
+      \item[ii.]
+
+      \item[iii.]
+
+    \end{enumerate}
+  \item[(c)]
+
+\end{enumerate}
+
+\problemitem{4}
+\begin{enumerate}
+  \item[(a)]
+
+  \item[(b)]
+
+\end{enumerate}
+
+\problemitem{5}
+
+\end{enumerate}
+\end{document}
